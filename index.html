@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarumi Ventures Africa - Building You Up The Right Way</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon: #800020;
+            --maroon-light: #a53860;
+            --gold: #d4af37;
+            --dark: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--maroon);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(128, 0, 32, 0.2);
+        }
+
+        .btn:hover {
+            background: var(--maroon-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(128, 0, 32, 0.3);
+        }
+
+        /* ================= HEADER & NAVIGATION ================= */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Menu Button like Reshift Africa */
+        .menu-button {
+            background: none;
+            border: none;
+            color: var(--maroon);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-button:hover {
+            background: rgba(128, 0, 32, 0.1);
+        }
+
+        .menu-button i {
+            font-size: 1.2rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 1002;
+            padding: 100px 40px;
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .mobile-menu-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .mobile-menu-link:hover {
+            color: var(--maroon);
+            padding-left: 15px;
+        }
+
+        .mobile-menu-link:hover::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-menu:hover {
+            color: var(--maroon);
+            transform: rotate(90deg);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* ================= HERO SECTION WITH BACKGROUND ================= */
+        .hero-section {
+            padding-top: 180px;
+            padding-bottom: 120px;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), 
+                        url('images/home\ page.jpg');
+            background-size: 40%;
+            background-position: right 30% center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--maroon);
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-description {
+            font-size: 1.4rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-cta {
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ================= SECTION COMMON STYLES ================= */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section-header.visible h2 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--maroon);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 25px auto 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease 0.2s;
+        }
+
+        .section-header.visible p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--maroon);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .section-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--maroon);
+            transition: var(--transition);
+        }
+
+        .section-link:hover {
+            transform: translateX(5px);
+        }
+
+        .section-link:hover::after {
+            width: 100%;
+        }
+
+        .section-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .section-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ================= ABOUT SECTION ================= */
+        .about-preview {
+            background: var(--white);
+            padding: 120px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+
+        .about-text.visible p {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-text p:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease;
+        }
+
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ================= SERVICES SECTION ================= */
+        .services-preview {
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.03) 0%, rgba(212, 175, 55, 0.03) 100%);
+            padding: 120px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-item {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease;
+        }
+
+        .service-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item:nth-child(2) { transition-delay: 0.1s; }
+        .service-item:nth-child(3) { transition-delay: 0.2s; }
+        .service-item:nth-child(4) { transition-delay: 0.3s; }
+        .service-item:nth-child(5) { transition-delay: 0.4s; }
+
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--maroon);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .service-item:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-item h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+
+        .service-item p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ================= IMPACT SECTION ================= */
+        .impact-preview {
+            background: var(--white);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .impact-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+            z-index: -1;
+        }
+
+        .impact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .impact-text h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .impact-text h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--maroon);
+        }
+
+        .impact-text p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+
+        .impact-text.visible p {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s ease;
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .stat-item:nth-child(1) { transition-delay: 0.1s; }
+        .stat-item:nth-child(2) { transition-delay: 0.2s; }
+        .stat-item:nth-child(3) { transition-delay: 0.3s; }
+        .stat-item:nth-child(4) { transition-delay: 0.4s; }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--maroon);
+            display: block;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .impact-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease;
+        }
+
+        .impact-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .impact-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .impact-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ================= PUBLICATIONS SECTION ================= */
+        .publications-preview {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 248, 248, 0.9) 100%);
+            padding: 120px 0;
+        }
+
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .publication-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease;
+        }
+
+        .publication-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .publication-item:nth-child(2) { transition-delay: 0.2s; }
+        .publication-item:nth-child(3) { transition-delay: 0.4s; }
+
+        .publication-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .publication-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .publication-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .publication-item:hover .publication-img img {
+            transform: scale(1.1);
+        }
+
+        .publication-info {
+            padding: 30px;
+        }
+
+        .publication-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            min-height: 60px;
+        }
+
+        .publication-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* ================= PARTNERS SECTION ================= */
+        .partners-section {
+            padding: 100px 0;
+            background: var(--white);
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .partners-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .partners-subtitle {
+            text-align: center;
+            color: var(--maroon);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            font-weight: 500;
+        }
+
+        .marquee-track {
+            display: flex;
+            animation: marquee 30s linear infinite;
+            padding: 20px 0;
+        }
+
+        .partner-logo {
+            flex: 0 0 auto;
+            margin: 0 40px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .partner-logo img {
+            max-height: 70px;
+            max-width: 180px;
+            filter: grayscale(0%);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ================= QUOTE SECTION ================= */
+        .quote-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-light) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Z"></path></svg>');
+            background-size: cover;
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .quote-text {
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ================= FOOTER ================= */
+        .main-footer {
+            background: #1a1a1a;
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-tagline {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .whatsapp-footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .whatsapp-footer-link:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--maroon);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--maroon);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .contact-info {
+            color: #aaa;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--maroon);
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p:first-child {
+            margin-bottom: 10px;
+        }
+
+        /* ================= RESPONSIVE DESIGN ================= */
+        @media (max-width: 1024px) {
+            .hero-section {
+                background-size: 50%;
+                background-position: right 20% center;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .about-content, .impact-content {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                background-size: 70%;
+                background-position: center right;
+                padding-top: 150px;
+                padding-bottom: 80px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content, .impact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image img, .impact-image img {
+                height: 350px;
+            }
+            
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .services-grid, .publications-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quote-text {
+                font-size: 1.5rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                background-size: 80%;
+                background-position: center right;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-image img, .impact-image img {
+                height: 280px;
+            }
+            
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-item, .publication-item {
+                padding: 30px 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-logo-container {
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo & Menu Button -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="#home">
+                    <img src="images/Jarumi-Ventures-Logo.png" alt="Jarumi Ventures Africa" class="logo">
+                </a>
+            </div>
+
+            <!-- Menu Button like Reshift Africa -->
+            <button class="menu-button" id="menuButton">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="index.html" class="mobile-menu-link">Home</a>
+            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="services.html" class="mobile-menu-link">Services</a>
+            <a href="impact.html" class="mobile-menu-link">Impact</a>
+            <a href="publications.html" class="mobile-menu-link">Publications</a>
+            <a href="get started.html" class="mobile-menu-link">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tagline">Building You Up The Right Way</div>
+                <h1 class="hero-title">Jarumi Ventures Africa</h1>
+                <p class="hero-description">
+                    Unlocking the potential of mission-driven organizations to build resilient, revenue-generating, and impact-driven institutions across Africa.
+                </p>
+                <a href="get started.html" class="btn hero-cta">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Empowering Purpose-Driven Organizations</h2>
+                <p>We help nonprofits and social impact ventures transition from donor dependency to long-term sustainability through embedded business development support</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Jarumi Ventures Africa empowers purpose-driven organizations to build systems that scale impact and sustainability. 
+                        With a focus on sustainable practices, we equip nonprofits with the strategic tools, systems, and donor-readiness 
+                        support needed to scale their impact, sustain operations, and inspire long-term donor confidence.
+                    </p>
+                    <p>
+                        Across Africa, thousands of nonprofits are doing critical work but lack the business acumen and operational 
+                        stability to scale or survive donor fatigue. With over 150,000 registered NGOs across the continent, 
+                        our intervention shifts organizations from fragile to future-proof, unlocking their potential to generate 
+                        revenue, create jobs, and scale their missions sustainably.
+                    </p>
+                    <a href="about.html" class="section-link">
+                        Learn More About us <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="about-image">
+                    <img src="C:\Users\Admin\Desktop\jarumu-test\images\empoering.jpeg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive, embedded support to help organizations build operational strength and financial resilience</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Strategic Business Development Advisory</h3>
+                    <p>We co-create realistic, mission-aligned strategic plans and financial models that guide nonprofits toward long-term sustainability and readiness for funding or partnerships.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Systems Strengthening & Implementation</h3>
+                    <p>Jarumi supports nonprofits in designing and implementing practical internal systems, compliance, and operations, so they function like efficient, well-run enterprises.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Embedded Capacity Building & Coaching</h3>
+                    <p>Beyond one-off training, we embed with teams to offer sustained mentorship, targeted workshops, and hands-on support, ensuring new systems are adopted and optimized.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Financial & Revenue Model Development</h3>
+                    <p>We help organizations develop earned-income streams and alternative fundraising models to diversify revenue and build financial resilience beyond donor funding.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Donor Readiness & Institutional Strengthening</h3>
+                    <p>We prepare nonprofits to attract and retain mission-aligned funding through robust governance, transparent reporting, and strategic partnership development.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="services.html" class="section-link">
+                    Explore All Our Services <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Preview -->
+<section class="impact-preview" id="impact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Impact</h2>
+            <p>Transforming organizations across Africa's nonprofit ecosystem with measurable results</p>
+        </div>
+        
+        <div class="impact-content">
+            <div class="impact-text">
+                <h3>Creating Sustainable Change</h3>
+                <p>
+                    Jarumi Ventures Africa exists to bridge a critical gap in the development ecosystem, 
+                    helping nonprofits and social enterprises transition from donor dependency to long-term sustainability. 
+                    By bringing private-sector precision to purpose-driven work, we empower organizations to strengthen 
+                    their systems, diversify their revenue, and align their strategy for scale.
+                </p>
+                <p>
+                    Our model is deeply collaborative and embedded, ensuring that the solutions we offer are not only 
+                    relevant but adopted and sustained. We work with organizations to build resilience against donor 
+                    fatigue and financial fragility.
+                </p>
+                
+               
+                
+                <a href="impact.html" class="section-link">
+                    See Our Full Impact Stories <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="impact-image">
+                <img src="images/ourimpact.jpeg" alt="Our Impact in Africa">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Publications Preview -->
+<section class="publications-preview" id="publications">
+    <div class="container">
+        <div class="section-header">
+            <h2>Publications & Insights</h2>
+            <p>Latest research, workshop reports, and resources on youth development and nonprofit sustainability in Africa</p>
+        </div>
+        
+        <div class="publications-grid">
+           <!-- Publication 1: e-Book - Bridging the Gap -->
+            <div class="publication-item">
+                <div class="publication-img">
+                    <img src="images/buildingbridges.jpeg" alt="Bridging the Gap eBook Cover">
+                </div>
+                <div class="publication-info">
+                    <h3>e-Book: Bridging the Gap</h3>
+                    <p>Cross-generational dialogue and mentorship framework for youth development and leadership in African communities.</p>
+                    <div class="publication-meta">
+                       
+                    </div>
+                    <div class="publication-actions">
+                        <a href="pdfs/e-Book-Bridging-the-Gap-(Cross-Generational-Dialogue-and-Mentorship-Book).pdf" target="_blank" class="btn btn-read">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Publication 2: Jarumi IWD Workshop Report -->
+            <div class="publication-item">
+                <div class="publication-img">
+                    <img src="images/IWDworkshop.jpeg" alt="IWD Workshop Report Cover">
+                </div>
+                <div class="publication-info">
+                    <h3>Jarumi IWD Workshop Report</h3>
+                    <p>Comprehensive report from the International Women's Day workshop focusing on women's leadership in nonprofit management.</p>
+                    <div class="publication-actions">
+                        <a href="pdfs/Jarumi-IWD-Workshop-Report.pdf" target="_blank" class="btn btn-read">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Publication 3: UNICEF FGM Webinar Report -->
+            <div class="publication-item">
+                <div class="publication-img">
+                    <img src="images/unicefcameroon.jpeg" alt="UNICEF FGM Webinar Report">
+                </div>
+                <div class="publication-info">
+                    <h3>UNICEF FGM Zero Tolerance Webinar</h3>
+                    <p>Pan-African webinar report on combating Female Genital Mutilation with insights from experts and survivor-led movements.</p>
+                    <div class="publication-actions">
+                        <a href="pdfs/UNICEF-Cameroon-Activity-Report-for-Webinar.pdf" target="_blank" class="btn btn-read">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="publications.html" class="section-link">
+                View All 6 Publications <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Add this CSS to your landing page -->
+<style>
+.publication-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-read {
+    background: var(--maroon);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    flex: 1;
+    text-align: center;
+    border: 2px solid var(--maroon);
+}
+
+.btn-download {
+    background: transparent;
+    color: var(--maroon);
+    border: 2px solid var(--maroon);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    flex: 1;
+    text-align: center;
+}
+
+.btn-read:hover {
+    background: var(--maroon-light);
+    transform: translateY(-2px);
+}
+
+.btn-download:hover {
+    background: var(--maroon);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.publication-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.publication-item:hover {
+    transform: translateY(-10px);
+}
+
+.publication-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.publication-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.publication-item:hover .publication-img img {
+    transform: scale(1.05);
+}
+
+.publication-info {
+    padding: 25px;
+}
+
+.publication-info h3 {
+    margin-bottom: 10px;
+    color: var(--dark);
+    font-size: 1.3rem;
+}
+
+.publication-info p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+</style>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <h2 class="partners-title">Our Trusted Partners</h2>
+            <p class="partners-subtitle">Collaborating with organizations across Africa to build sustainable impact</p>
+            
+            <div class="marquee-track">
+                <div class="partner-logo"><img src="images/countygovtKilifi.png" alt="County Government Kilifi"></div>
+                <div class="partner-logo"><img src="images/crawntrust.png" alt="Crawn Trust"></div>
+                <div class="partner-logo"><img src="images/crew.png" alt="CREW"></div>
+                <div class="partner-logo"><img src="images/kilifimumsngo.png" alt="Kilifi Mums NGO"></div>
+                <div class="partner-logo"><img src="images/leadchildafrica.png" alt="Lead Child Africa"></div>
+                <div class="partner-logo"><img src="images/mofundAfrica.png" alt="MoFund Africa"></div>
+                <div class="partner-logo"><img src="images/unicef.png" alt="UNICEF"></div>
+                <div class="partner-logo"><img src="images/unwomen.png" alt="UN Women"></div>
+                <div class="partner-logo"><img src="images/countygovtKilifi.png" alt="County Government Kilifi"></div>
+                <div class="partner-logo"><img src="images/crawntrust.png" alt="Crawn Trust"></div>
+                <div class="partner-logo"><img src="images/crew.png" alt="CREW"></div>
+                <div class="partner-logo"><img src="images/kilifimumsngo.png" alt="Kilifi Mums NGO"></div>
+                <div class="partner-logo"><img src="images/leadchildafrica.png" alt="Lead Child Africa"></div>
+                <div class="partner-logo"><img src="images/mofundAfrica.png" alt="MoFund Africa"></div>
+                <div class="partner-logo"><img src="images/unicef.png" alt="UNICEF"></div>
+                <div class="partner-logo"><img src="images/unwomen.png" alt="UN Women"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container quote-container">
+            <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="quote-text">
+                "To be successful, you have to have your heart in your business, and your business in your heart."
+            </p>
+            <div class="quote-author">– Thomas Watson, Sr.</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo-container">
+                        <img src="images/Jarumi-Ventures-Logo.png" alt="Jarumi Ventures Africa" class="footer-logo">
+                        <div>
+                            <div class="footer-logo-text">Jarumi Ventures Africa</div>
+                            <p class="footer-tagline">Building You Up The Right Way</p>
+                        </div>
+                    </div>
+                    <p class="footer-tagline">
+                        Unlocking the potential of mission-driven organizations to build resilient, 
+                        revenue-generating, and impact-driven institutions across Africa.
+                    </p>
+                    <a href="https://www.whatsapp.com/channel/0029VbAlsIp6BIEj1lqL8B1N" target="_blank" class="whatsapp-footer-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Opportunities
+                    </a>
+                    <div class="social-links">
+                        <a href="https://twitter.com/JarumiAfrica" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/jarumi-ventures-africa" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="home">Home</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="services">Services</a></li>
+                        <li><a href="impact">Impact</a></li>
+                        <li><a href="publications">Publications</a></li>
+                        <li><a href="getstarted.html">Get Started</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>Nairobi, Kenya</div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                +254 70 776 7453<br>
+                                +254 720 575 051
+                            </div>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jarumi Ventures Africa. All rights reserved.</p>
+                <p>Empowering purpose-driven organizations across Africa</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlay = document.getElementById('overlay');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        overlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Scroll Animations with different transitions
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe section headers
+        document.querySelectorAll('.section-header').forEach(el => {
+            sectionObserver.observe(el);
+        });
+
+        // Observe about text and image
+        document.querySelectorAll('.about-text, .about-image, .impact-text, .impact-image').forEach(el => {
+            sectionObserver.observe(el);
+        });
+
+        // Observe service items with staggered delay
+        const serviceObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-item, .stat-item, .publication-item').forEach(el => {
+            serviceObserver.observe(el);
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.querySelector('.main-header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.style.boxShadow = 'none';
+                return;
+            }
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.08)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#') return;
+                
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

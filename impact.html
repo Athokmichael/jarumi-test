@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Impact - Jarumi Ventures Africa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon: #800020;
+            --maroon-light: #a53860;
+            --gold: #d4af37;
+            --dark: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--maroon);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--maroon);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--maroon);
+        }
+
+        /* ================= HEADER ================= */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+
+        /* Menu Button like Reshift Africa */
+        .menu-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--maroon);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .menu-button:hover {
+            background: var(--maroon-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(128, 0, 32, 0.2);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            padding: 80px 30px;
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-menu-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-link:hover {
+            color: var(--maroon);
+            padding-left: 10px;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* ================= HERO SECTION ================= */
+        .impact-hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+            text-align: center;
+        }
+
+        .impact-hero h1 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .impact-hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ================= SECTION STYLES ================= */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--maroon);
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        .section-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--maroon);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: var(--transition);
+        }
+
+        .section-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .section-link:hover {
+            transform: translateX(5px);
+        }
+
+        .section-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ================= IMPACT METRICS ================= */
+        .impact-metrics {
+            background: var(--white);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .metric-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border-top: 4px solid var(--maroon);
+            transition: var(--transition);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--maroon);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .metric-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        /* ================= CASE STUDIES ================= */
+        .case-studies {
+            background: var(--light-gray);
+        }
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .case-study-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .case-study-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .case-study-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .case-study-card:hover .case-study-img img {
+            transform: scale(1.05);
+        }
+
+        .case-study-content {
+            padding: 30px;
+        }
+
+        .case-study-title {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .case-study-org {
+            color: var(--maroon);
+            font-weight: 500;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .case-study-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .case-study-results {
+            background: rgba(128, 0, 32, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .case-study-results h4 {
+            color: var(--maroon);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .case-study-results ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .case-study-results li {
+            margin-bottom: 8px;
+            color: var(--gray);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .case-study-results li i {
+            color: var(--maroon);
+            margin-top: 5px;
+        }
+
+        /* ================= CERTIFICATES SECTION ================= */
+        .certificates-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .certificate-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .certificate-image {
+            max-width: 100%;
+            height: 250px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .certificate-title {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .certificate-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ================= PARTNERS SECTION ================= */
+        .partners-section {
+            background: var(--light-gray);
+            padding: 80px 0;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .partner-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .partner-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .partner-logo-img {
+            max-width: 150px;
+            max-height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .partner-name {
+            font-size: 1rem;
+            color: var(--dark);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* ================= MAGAZINE FEATURE SECTION ================= */
+        .magazine-feature {
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+            padding: 80px 0;
+        }
+
+        .magazine-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .magazine-text h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .magazine-text h4 {
+            color: var(--maroon);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .magazine-text p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .magazine-quote {
+            font-style: italic;
+            color: var(--maroon);
+            font-size: 1.2rem;
+            margin: 25px 0;
+            padding-left: 20px;
+            border-left: 3px solid var(--maroon);
+        }
+
+        .magazine-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .magazine-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ================= TESTIMONIALS ================= */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 4rem;
+            color: var(--maroon);
+            opacity: 0.2;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .testimonial-org {
+            color: var(--maroon);
+            font-size: 0.95rem;
+        }
+
+        /* ================= CTA SECTION ================= */
+        .impact-cta {
+            background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .impact-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .impact-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--maroon);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ================= FOOTER ================= */
+        .main-footer {
+            background: #1a1a1a;
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            height: 50px;
+        }
+
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-tagline {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .whatsapp-footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .whatsapp-footer-link:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--maroon);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--maroon);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .contact-info {
+            color: #aaa;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--maroon);
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p:last-child {
+            margin-top: 10px;
+        }
+
+        /* ================= RESPONSIVE DESIGN ================= */
+        @media (max-width: 992px) {
+            .impact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .impact-cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .magazine-content {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                padding: 15px 0;
+            }
+            
+            .impact-hero {
+                padding: 130px 0 80px;
+            }
+            
+            .impact-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .impact-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .certificates-grid,
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .magazine-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-card {
+                padding: 30px 20px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+            
+            .impact-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .impact-cta p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                height: 50px;
+            }
+            
+            .impact-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .metrics-grid,
+            .certificates-grid,
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metric-card {
+                padding: 30px 20px;
+            }
+            
+            .metric-number {
+                font-size: 2.5rem;
+            }
+            
+            .case-study-content {
+                padding: 20px;
+            }
+            
+            .testimonial-card {
+                padding: 25px 15px;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+            }
+            
+            .impact-cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo-container {
+                justify-content: center;
+            }
+            
+            .footer-column h4 {
+                text-align: center;
+            }
+            
+            .footer-links a:hover {
+                transform: none;
+            }
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo & Menu Button -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/Jarumi-Ventures-Logo.png" alt="Jarumi Ventures Africa" class="logo">
+                </a>
+            </div>
+
+            <!-- Menu Button like Reshift Africa -->
+            <button class="menu-button" id="menuButton">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="index.html" class="mobile-menu-link">Home</a>
+            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="services.html" class="mobile-menu-link">Services</a>
+            <a href="impact.html" class="mobile-menu-link">Impact</a>
+            <a href="publications.html" class="mobile-menu-link">Publications</a>
+            <a href="getstarted.html" class="mobile-menu-link">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="impact-hero">
+        <div class="container">
+            <h1 class="fade-in">Our Impact Across Africa</h1>
+            <p class="fade-in">Transforming nonprofits and social enterprises from donor dependency to sustainable, resilient institutions that create lasting change in communities.</p>
+        </div>
+    </section>
+
+    <!-- Impact Metrics -->
+    <section class="impact-metrics">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Impact by Numbers</h2>
+                <p class="fade-in">Quantifying our contribution to Africa's nonprofit ecosystem</p>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card fade-in">
+                    <span class="metric-number">50+</span>
+                    <span class="metric-label">Organizations Supported</span>
+                    <p class="metric-description">Nonprofits and social enterprises across East Africa that have strengthened their capacity through our programs.</p>
+                </div>
+                
+                <div class="metric-card fade-in">
+                    <span class="metric-number">85%</span>
+                    <span class="metric-label">Success Rate</span>
+                    <p class="metric-description">Of organizations report improved operational efficiency and financial management within 6 months.</p>
+                </div>
+                
+                <div class="metric-card fade-in">
+                    <span class="metric-number">$2M+</span>
+                    <span class="metric-label">Funding Secured</span>
+                    <p class="metric-description">In grants and sustainable revenue streams generated for our partner organizations.</p>
+                </div>
+                
+                <div class="metric-card fade-in">
+                    <span class="metric-number">200+</span>
+                    <span class="metric-label">Leaders Trained</span>
+                    <p class="metric-description">Nonprofit executives and managers equipped with business development skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="certificates-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Our Certifications</h2>
+                <p class="fade-in">Official recognition of our expertise and credentials</p>
+            </div>
+            
+            <div class="certificates-grid">
+                <div class="certificate-item fade-in">
+                    <img src="images/Copy of I'm an Expert.pdf_20240211_092233_0000.png" alt="Expert Certificate" class="certificate-image">
+                    <h3 class="certificate-title">Expert Certification</h3>
+                    <p class="certificate-description">Official certification recognizing our expertise in business development and nonprofit sustainability consulting.</p>
+                </div>
+                
+                <div class="certificate-item fade-in">
+                    <div class="certificate-placeholder">
+                        <i class="fas fa-award" style="font-size: 4rem; color: var(--maroon); margin-bottom: 20px;"></i>
+                        <h3 class="certificate-title">Additional Certifications</h3>
+                        <p class="certificate-description">More certificates and accreditations to be added .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Organizations We've Worked With</h2>
+                <p class="fade-in">Collaborating with diverse organizations across Africa to build sustainable impact</p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-item fade-in">
+                    <img src="images/Beauty-for-ashes-Final (2).png" alt="Beauty for Ashes" class="partner-logo-img">
+                    <span class="partner-name">Beauty for Ashes</span>
+                </div>
+                
+                <div class="partner-item fade-in">
+                    <img src="images/BYM Logo.png" alt="BYM" class="partner-logo-img">
+                    <span class="partner-name">BYM Organization</span>
+                </div>
+                
+                <div class="partner-item fade-in">
+                    <img src="images/Ment Magazine Logo.png" alt="Ment Magazine" class="partner-logo-img">
+                    <span class="partner-name">Ment Magazine</span>
+                </div>
+                
+                <div class="partner-item fade-in">
+                    <div class="partner-placeholder">
+                        <i class="fas fa-handshake" style="font-size: 2.5rem; color: var(--maroon); margin-bottom: 15px;"></i>
+                        <span class="partner-name">More Partners to be added</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Magazine Feature Section -->
+    <section class="magazine-feature">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Featured in Menther Magazine</h2>
+                <p class="fade-in">Our founder's journey and vision featured in leading publication</p>
+            </div>
+            
+            <div class="magazine-content">
+                <div class="magazine-text fade-in">
+                    <h3>MARY YVONNE ODODAH</h3>
+                    <h4>Jarumi Consulting Ltd</h4>
+                    
+                    <h4>BRIDGING GAPS FOR WOMEN TO START BUSINESSES</h4>
+                    
+                    <p>When the pandemic hit, more women than men lost their jobs and many sought to turn to self-employment as a means to survive, but the gaps in understanding how a business works and how to sustain this was too wide. Jarumi was started to identify gaps and help women in startups run successful businesses.</p>
+                    
+                    <p>Throughout the journey, what keeps me going is my family, the drive to see change, being told no or I am not capable of achieving something drives me to want to achieve even higher than the limits set. My curiosity. My motto: <strong>It always seems impossible until it's done.</strong></p>
+                    
+                    <div class="magazine-quote">
+                        "It always seems impossible until it's done."
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="magazine-image fade-in">
+                    <img src="C:\Users\Admin\Desktop\jarumu-test\images\Menther magazine insert.png"" alt="Mary Yvonne Ododah featured in Menther Magazine">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Success Stories</h2>
+                <p class="fade-in">Real transformations from organizations we've partnered with</p>
+            </div>
+            
+            <div class="case-studies-grid">
+                <div class="case-study-card fade-in">
+                    <div class="case-study-img">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Women-led organization">
+                    </div>
+                    <div class="case-study-content">
+                        <h3 class="case-study-title">From Survival to Sustainability</h3>
+                        <span class="case-study-org">Women-Led Community Organization, Kenya</span>
+                        <p class="case-study-description">A grassroots women's group transitioned from complete donor dependency to generating 60% of their operational costs through social enterprise initiatives.</p>
+                        
+                        <div class="case-study-results">
+                            <h4>Key Results</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 60% reduction in donor dependency</li>
+                                <li><i class="fas fa-check"></i> 3 new revenue streams created</li>
+                                <li><i class="fas fa-check"></i> 12 new jobs created in community</li>
+                                <li><i class="fas fa-check"></i> 200% increase in program reach</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-study-card fade-in">
+                    <div class="case-study-img">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Youth NGO">
+                    </div>
+                    <div class="case-study-content">
+                        <h3 class="case-study-title">Strategic Growth & Expansion</h3>
+                        <span class="case-study-org">Youth Development NGO, Tanzania</span>
+                        <p class="case-study-description">A youth-focused NGO developed a 3-year strategic plan and diversified funding model, enabling expansion to 3 new regions.</p>
+                        
+                        <div class="case-study-results">
+                            <h4>Key Results</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 40% increase in annual budget</li>
+                                <li><i class="fas fa-check"></i> Expansion to 3 new regions</li>
+                                <li><i class="fas fa-check"></i> 5-year sustainability plan developed</li>
+                                <li><i class="fas fa-check"></i> 15 new partnerships established</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">What Our Partners Say</h2>
+                <p class="fade-in">Feedback from organizations we've worked with</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">
+                        "Jarumi's support transformed our organization from struggling to sustainable. Their embedded approach meant we didn't just get advice - we built lasting capacity within our team."
+                    </p>
+                    <div class="testimonial-author">Sarah Mwangi</div>
+                    <div class="testimonial-org">Executive Director, Community Health Initiative</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="impact-cta">
+        <div class="container">
+            <h2 class="fade-in">Ready to Transform Your Organization?</h2>
+            <p class="fade-in">Join the growing number of African nonprofits building sustainable futures with Jarumi's support.</p>
+            <a href="getstarted.html" class="cta-button fade-in">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo-container">
+                        <img src="images/Jarumi-Ventures-Logo.png" alt="Jarumi Ventures Africa" class="footer-logo">
+                        <div>
+                            <div class="footer-logo-text">Jarumi Ventures Africa</div>
+                            <p class="footer-tagline">Building You Up The Right Way</p>
+                        </div>
+                    </div>
+                    <p class="footer-tagline">
+                        Unlocking the potential of mission-driven organizations to build resilient, 
+                        revenue-generating, and impact-driven institutions across Africa.
+                    </p>
+                    <a href="https://www.whatsapp.com/channel/0029VbAlsIp6BIEj1lqL8B1N" target="_blank" class="whatsapp-footer-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Opportunities
+                    </a>
+                    <div class="social-links">
+                        <a href="https://twitter.com/JarumiAfrica" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/jarumi-ventures-africa" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="getstarted.html">Get Started</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>Nairobi, Kenya</div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                +254 70 776 7453<br>
+                                +254 720 575 051
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jarumi Ventures Africa. All rights reserved.</p>
+                <p>Empowering purpose-driven organizations across Africa</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlay = document.getElementById('overlay');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        overlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close mobile menu when clicking links
+        const mobileLinks = document.querySelectorAll('.mobile-menu-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Scroll Animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Testimonial rotation
+        const testimonials = [
+            {
+                text: "Jarumi's support transformed our organization from struggling to sustainable. Their embedded approach meant we didn't just get advice - we built lasting capacity within our team.",
+                author: "Sarah Mwangi",
+                org: "Executive Director, Community Health Initiative"
+            },
+            {
+                text: "The business development training provided by Jarumi helped us secure our first major grant. Their practical approach made complex concepts accessible to our entire team.",
+                author: "David Ochieng",
+                org: "Program Manager, Youth Empowerment Network"
+            },
+            {
+                text: "Working with Jarumi was a turning point for our organization. We moved from reactive fundraising to strategic sustainability planning that has secured our future.",
+                author: "Amina Hassan",
+                org: "Founder, Women's Economic Collective"
+            }
+        ];
+
+        let currentTestimonial = 0;
+        const testimonialElement = document.querySelector('.testimonial-card');
+        
+        function rotateTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            const testimonial = testimonials[currentTestimonial];
+            
+            testimonialElement.innerHTML = `
+                <p class="testimonial-text fade-in">${testimonial.text}</p>
+                <div class="testimonial-author fade-in">${testimonial.author}</div>
+                <div class="testimonial-org fade-in">${testimonial.org}</div>
+            `;
+            
+            // Re-add fade-in class and trigger animation
+            const newElements = testimonialElement.querySelectorAll('.fade-in');
+            newElements.forEach(el => {
+                el.classList.remove('visible');
+                setTimeout(() => el.classList.add('visible'), 100);
+            });
+        }
+
+        // Rotate every 8 seconds
+        setInterval(rotateTestimonial, 8000);
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+            }
+        });
+    </script>
+</body>
+</html>

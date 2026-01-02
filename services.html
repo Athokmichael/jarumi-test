@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Jarumi Ventures Africa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon: #800020;
+            --maroon-light: #a53860;
+            --gold: #d4af37;
+            --dark: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--maroon);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(128, 0, 32, 0.2);
+        }
+
+        .btn:hover {
+            background: var(--maroon-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(128, 0, 32, 0.3);
+        }
+
+        /* ================= HEADER & NAVIGATION ================= */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Menu Button like Reshift Africa */
+        .menu-button {
+            background: none;
+            border: none;
+            color: var(--maroon);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-button:hover {
+            background: rgba(128, 0, 32, 0.1);
+        }
+
+        .menu-button i {
+            font-size: 1.2rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 1002;
+            padding: 100px 40px;
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .mobile-menu-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .mobile-menu-link:hover {
+            color: var(--maroon);
+            padding-left: 15px;
+        }
+
+        .mobile-menu-link:hover::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-menu:hover {
+            color: var(--maroon);
+            transform: rotate(90deg);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* ================= SERVICES HERO ================= */
+        .services-hero {
+            padding-top: 180px;
+            padding-bottom: 100px;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), 
+                        url('images/services.jpg');
+            background-size: cover;
+            background-position: center center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-hero h1 {
+            font-size: 3.2rem;
+            color: var(--maroon);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .services-hero p {
+            font-size: 1.4rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* ================= SECTION STYLES ================= */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--maroon);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 25px auto 0;
+        }
+
+        /* ================= SERVICES SECTION ================= */
+        .services-section {
+            background: var(--white);
+            padding: 100px 0;
+        }
+
+        .services-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .services-intro h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 25px;
+        }
+
+        .services-intro p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--maroon);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--maroon);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--maroon);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            min-height: 70px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .service-features li {
+            color: var(--gray);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--maroon);
+            font-weight: bold;
+        }
+
+        /* ================= SOLUTIONS SECTION ================= */
+        .solutions-section {
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.03) 0%, rgba(212, 175, 55, 0.03) 100%);
+            padding: 100px 0;
+        }
+
+        .solutions-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .solutions-content h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .solutions-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--maroon);
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .solution-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .solution-card h4 {
+            color: var(--maroon);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .solution-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ================= PROCESS SECTION ================= */
+        .process-section {
+            background: var(--white);
+            padding: 100px 0;
+        }
+
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: var(--maroon);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .process-step h4 {
+            color: var(--dark);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .process-step p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ================= TARGET MARKET SECTION ================= */
+        .target-market {
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.03) 0%, rgba(212, 175, 55, 0.03) 100%);
+            padding: 100px 0;
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .market-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .market-card h3 {
+            color: var(--maroon);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(128, 0, 32, 0.1);
+        }
+
+        .market-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .market-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .market-features li {
+            color: var(--gray);
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .market-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--maroon);
+        }
+
+        /* ================= CTA SECTION ================= */
+        .cta-section {
+            background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Z"></path></svg>');
+            background-size: cover;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            background: var(--white);
+            color: var(--maroon);
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ================= FOOTER ================= */
+        .main-footer {
+            background: #1a1a1a;
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-tagline {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .whatsapp-footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .whatsapp-footer-link:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--maroon);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--maroon);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .contact-info {
+            color: #aaa;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--maroon);
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p:first-child {
+            margin-bottom: 10px;
+        }
+
+        /* ================= RESPONSIVE DESIGN ================= */
+        @media (max-width: 768px) {
+            .services-hero {
+                padding-top: 150px;
+                padding-bottom: 80px;
+            }
+            
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid, .solutions-grid, .process-grid, .market-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card, .solution-card, .process-step, .market-card {
+                padding: 30px 25px;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-logo-container {
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo & Menu Button -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/Jarumi-Ventures-Logo.png" alt="Jarumi Ventures Africa" class="logo">
+                </a>
+            </div>
+
+            <!-- Menu Button like Reshift Africa -->
+            <button class="menu-button" id="menuButton">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="index.html" class="mobile-menu-link">Home</a>
+            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="services.html" class="mobile-menu-link">Services</a>
+            <a href="impact.html" class="mobile-menu-link">Impact</a>
+            <a href="publications.html" class="mobile-menu-link">Publications</a>
+            <a href="get started.html" class="mobile-menu-link">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container hero-container">
+            <h1>Our Strategic Solutions</h1>
+            <p>We bring private-sector precision to purpose-driven work, helping nonprofits transition from donor dependency to long-term sustainability</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Services</h2>
+                <p>Comprehensive, embedded support to help organizations build operational strength and financial resilience</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Strategic Business Development Advisory</h3>
+                    <p>We co-create realistic, mission-aligned strategic plans and financial models that guide nonprofits toward long-term sustainability and readiness for funding or partnerships.</p>
+                    <ul class="service-features">
+                        <li>Mission-aligned strategic planning</li>
+                        <li>Financial modeling and projections</li>
+                        <li>Partnership and investment readiness</li>
+                        <li>Revenue diversification strategies</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Systems Strengthening & Implementation</h3>
+                    <p>Jarumi supports nonprofits in designing and implementing practical internal systems, compliance, and operations, so they function like efficient, well-run enterprises.</p>
+                    <ul class="service-features">
+                        <li>Operational systems design</li>
+                        <li>Governance and compliance frameworks</li>
+                        <li>Financial management systems</li>
+                        <li>Monitoring and evaluation frameworks</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Embedded Capacity Building & Coaching</h3>
+                    <p>Beyond one-off training, we embed with teams to offer sustained mentorship, targeted workshops, and hands-on support, ensuring new systems are adopted and optimized.</p>
+                    <ul class="service-features">
+                        <li>Leadership and team development</li>
+                        <li>Skill-building workshops</li>
+                        <li>Hands-on implementation support</li>
+                        <li>Continuous coaching and refinement</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Financial & Revenue Model Development</h3>
+                    <p>We help organizations develop earned-income streams and alternative fundraising models to diversify revenue and build financial resilience beyond donor funding.</p>
+                    <ul class="service-features">
+                        <li>Revenue diversification strategies</li>
+                        <li>Earned-income model development</li>
+                        <li>Fundraising strategy optimization</li>
+                        <li>Financial sustainability planning</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Donor Readiness & Institutional Strengthening</h3>
+                    <p>We prepare nonprofits to attract and retain mission-aligned funding through robust governance, transparent reporting, and strategic partnership development.</p>
+                    <ul class="service-features">
+                        <li>Grant readiness and proposal development</li>
+                        <li>Donor relationship management</li>
+                        <li>Reporting and accountability systems</li>
+                        <li>Impact measurement and communication</li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="container">
+            <div class="solutions-content">
+                <h3>Our Holistic Solutions to Industry Challenges</h3>
+                <p>We address the critical gaps in Africa's nonprofit sector through targeted, context-specific interventions</p>
+                
+                <div class="solutions-grid">
+                    <div class="solution-card">
+                        <h4>Addressing Donor Dependency</h4>
+                        <p>Move organizations from fragile grant dependence to resilient, diversified revenue models that ensure long-term sustainability and program continuity.</p>
+                    </div>
+                    
+                    <div class="solution-card">
+                        <h4>Strengthening Operational Infrastructure</h4>
+                        <p>Build efficient internal systems, strategic planning capabilities, and leadership structures that enable scalability and accountability.</p>
+                    </div>
+                    
+                    <div class="solution-card">
+                        <h4>Building Business Development Capacity</h4>
+                        <p>Equip teams with enterprise-level planning, revenue modeling, and compliance expertise to become investment-ready and self-sustaining.</p>
+                    </div>
+                    
+                    <div class="solution-card">
+                        <h4>Filling the Capacity Gap</h4>
+                        <p>Provide embedded, long-term support where short-term generic training fails, ensuring skills are adopted and systems are implemented.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Service Delivery Process</h2>
+                <p>A structured, collaborative approach that delivers measurable impact and sustainable change</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Discovery & Assessment</h4>
+                        <p>Comprehensive analysis of organizational systems, gaps, opportunities, and readiness for transformation.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Co-Design & Strategy Development</h4>
+                        <p>Collaborative solution-building with leadership teams to create mission-aligned, context-specific strategies.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Implementation & System Integration</h4>
+                        <p>Embedding new systems and processes into daily operations with hands-on support and guidance.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Coaching & Sustainability Planning</h4>
+                        <p>Continuous learning, refinement, and capacity building to ensure lasting impact and organizational resilience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Market Section -->
+    <section class="target-market">
+        <div class="container">
+            <div class="section-header">
+                <h2>Who We Serve</h2>
+                <p>Supporting the entire African nonprofit and social enterprise ecosystem</p>
+            </div>
+            
+            <div class="market-grid">
+                <div class="market-card">
+                    <h3>Civil Society Organizations (CSOs)</h3>
+                    <p>Registered NGOs and community-based organizations that need to strengthen their institutional capacity and donor confidence through structured strategy, financial systems, and program design.</p>
+                    <ul class="market-features">
+                        <li>Registered NGOs across Africa</li>
+                        <li>Community-based organizations</li>
+                        <li>Faith-based organizations</li>
+                        <li>Women-led and youth-led groups</li>
+                    </ul>
+                </div>
+                
+                <div class="market-card">
+                    <h3>Social Impact Ventures</h3>
+                    <p>Hybrid organizations and social enterprises that need to bridge the gap between passion and performance, building scalable, impact-driven models with operational rigor.</p>
+                    <ul class="market-features">
+                        <li>Social enterprises and hybrids</li>
+                        <li>Impact-driven startups</li>
+                        <li>Mission-aligned businesses</li>
+                        <li>Innovation hubs and incubators</li>
+                    </ul>
+                </div>
+                
+                <div class="market-card">
+                    <h3>Development Partners & Funders</h3>
+                    <p>Donors and funding agencies seeking to build the capacity of their grantees and ensure sustainable impact beyond grant cycles.</p>
+                    <ul class="market-features">
+                        <li>International development agencies</li>
+                        <li>Foundations and trusts</li>
+                        <li>Corporate social responsibility programs</li>
+                        <li>Bilateral and multilateral donors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-container">
+            <h2>Ready to Build a Sustainable Future?</h2>
+            <p>Transform your organization from donor-dependent to sustainably empowered with Jarumi's strategic support</p>
+            <a href="get started.html" class="cta-btn">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo-container">
+                        <img src="images/Jarumi-Ventures-Logo.png" alt="Jarumi Ventures Africa" class="footer-logo">
+                        <div>
+                            <div class="footer-logo-text">Jarumi Ventures Africa</div>
+                            <p class="footer-tagline">Building You Up The Right Way</p>
+                        </div>
+                    </div>
+                    <p class="footer-tagline">
+                        Unlocking the potential of mission-driven organizations to build resilient, 
+                        revenue-generating, and impact-driven institutions across Africa.
+                    </p>
+                    <a href="https://www.whatsapp.com/channel/0029VbAlsIp6BIEj1lqL8B1N" target="_blank" class="whatsapp-footer-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Opportunities
+                    </a>
+                    <div class="social-links">
+                        <a href="https://twitter.com/JarumiAfrica" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/jarumi-ventures-africa" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="get started.html">Get Started</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>Nairobi, Kenya</div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                +254 70 776 7453<br>
+                                +254 720 575 051
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>hello@jarumi.co.ke</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jarumi Ventures Africa. All rights reserved.</p>
+                <p>Empowering purpose-driven organizations across Africa</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlay = document.getElementById('overlay');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        overlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animations
+        document.querySelectorAll('.service-card, .solution-card, .process-step, .market-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.querySelector('.main-header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.style.boxShadow = 'none';
+                return;
+            }
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.08)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

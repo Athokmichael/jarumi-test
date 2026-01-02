@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Jarumi Ventures Africa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon: #800020;
+            --maroon-light: #a53860;
+            --gold: #d4af37;
+            --dark: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* ================= HEADER ================= */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--maroon);
+            line-height: 1;
+        }
+
+        .logo-tagline {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 3px;
+        }
+
+        .menu-button {
+            background: none;
+            border: none;
+            color: var(--maroon);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .menu-button:hover {
+            background: rgba(128, 0, 32, 0.1);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 1002;
+            padding: 100px 40px;
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .mobile-menu-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .mobile-menu-link:hover {
+            color: var(--maroon);
+            padding-left: 15px;
+        }
+
+        .mobile-menu-link:hover::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-menu:hover {
+            color: var(--maroon);
+            transform: rotate(90deg);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* ================= PUBLICATIONS HERO ================= */
+        .publications-hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+            text-align: center;
+        }
+
+        .publications-hero h1 {
+            font-size: 3.2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .publications-hero p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ================= PUBLICATIONS GRID ================= */
+        .publications-main {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--maroon);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 25px auto 0;
+        }
+
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .publication-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .publication-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .publication-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .publication-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .publication-item:hover .publication-img img {
+            transform: scale(1.1);
+        }
+
+        .publication-info {
+            padding: 30px;
+        }
+
+        .publication-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .publication-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .publication-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .publication-type {
+            background: rgba(128, 0, 32, 0.1);
+            color: var(--maroon);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .publication-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .publication-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-align: center;
+            flex: 1;
+        }
+
+        .btn-read {
+            background: var(--maroon);
+            color: white;
+            border: 2px solid var(--maroon);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-read:hover {
+            background: var(--maroon-light);
+            transform: translateY(-2px);
+        }
+
+        /* ================= BACK BUTTON ================= */
+        .back-home {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--maroon);
+        }
+
+        .btn-back:hover {
+            background: transparent;
+            color: var(--maroon);
+            transform: translateY(-2px);
+        }
+
+        /* ================= FOOTER ================= */
+        .main-footer {
+            background: #1a1a1a;
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--white);
+        }
+
+        .footer-tagline {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .whatsapp-footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-footer-link:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--maroon);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--maroon);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .contact-info {
+            color: #aaa;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--maroon);
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            .publications-hero {
+                padding-top: 130px;
+            }
+            
+            .publications-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .publications-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .publication-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Menu -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/Jarumi-Ventures-Logo.png" alt="Jarumi Ventures Africa" class="logo">
+                </a>
+                <div>
+                    <div class="logo-text">Jarumi Ventures Africa</div>
+                    <div class="logo-tagline">Building You Up The Right Way</div>
+                </div>
+            </div>
+
+            <!-- Menu Button -->
+            <button class="menu-button" id="menuButton">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="index.html" class="mobile-menu-link">Home</a>
+            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="services.html" class="mobile-menu-link">Services</a>
+            <a href="impact.html" class="mobile-menu-link">Impact</a>
+            <a href="publications.html" class="mobile-menu-link">Publications</a>
+            <a href="get started.html" class="mobile-menu-link">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Publications Hero -->
+    <section class="publications-hero">
+        <div class="container">
+            <h1>Our Publications Library</h1>
+            <p>Access our complete collection of research reports, training guides, and workshop insights for nonprofit leaders and social entrepreneurs across Africa.</p>
+        </div>
+    </section>
+
+    <!-- Publications Main Content -->
+    <section class="publications-main">
+        <div class="container">
+            <div class="section-header">
+                <h2>All Publications</h2>
+                <p>Browse, read online, or download our comprehensive resources</p>
+            </div>
+            
+            <!-- Publications Grid - All 6 Publications -->
+            <div class="publications-grid">
+               <!-- Publication 1: e-Book - Bridging the Gap -->
+            <div class="publication-item">
+                <div class="publication-img">
+                    <img src="images/buildingbridges.jpeg" alt="Bridging the Gap eBook Cover">
+                </div>
+                <div class="publication-info">
+                    <h3>e-Book: Bridging the Gap</h3>
+                    <p>Cross-generational dialogue and mentorship framework for youth development and leadership in African communities.</p>
+                    <div class="publication-meta">
+                        <span class="publication-type">Training Guide</span>
+                    </div>
+                    <div class="publication-actions">
+                        <a href="pdfs/e-Book-Bridging-the-Gap-(Cross-Generational-Dialogue-and-Mentorship-Book).pdf" target="_blank" class="btn btn-read">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                
+                <!-- 2. Jarumi IWD Workshop Report -->
+                <div class="publication-item">
+                    <div class="publication-img">
+                        <img src="images/IWDworkshop.jpeg" alt="IWD Workshop Report">
+                    </div>
+                    <div class="publication-info">
+                        <h3>Jarumi International Women's Day Workshop Report</h3>
+                        <p>Comprehensive report from the 2023 IWD workshop focusing on women's leadership in nonprofit management and gender inclusion strategies.</p>
+                        <div class="publication-meta">
+                            <span class="publication-type">Workshop Report</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="pdfs/Jarumi-IWD-Workshop-Report.pdf" target="_blank" class="btn btn-read">
+                                Read more <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3. MHM Policy Baseline Survey -->
+                <div class="publication-item">
+                    <div class="publication-img">
+                        <img src="images/survey.jpeg" alt="MHM Policy Report">
+                    </div>
+                    <div class="publication-info">
+                        <h3>MHM Policy 2019-2030 Baseline Survey Research Report</h3>
+                        <p>Comprehensive baseline assessment of Menstrual Hygiene Management policy implementation across East African schools and communities.</p>
+                        <div class="publication-meta">
+                            <span class="publication-type">Research Report</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="pdfs/MHM-Policy-2019-2030-Baseline-Survey-Research-Report.pdf" target="_blank" class="btn btn-read">
+                                Read more <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 4. Nairobi Youth Resource Centers Survey -->
+                <div class="publication-item">
+                    <div class="publication-img">
+                        <img src="images/nairobi.jpeg" alt="Youth Resource Centers Report">
+                    </div>
+                    <div class="publication-info">
+                        <h3>Nairobi Youth Resource Centers Survey Report</h3>
+                        <p>Official survey report assessing the status, utilization, and impact of youth resource centers across Nairobi County.</p>
+                        <div class="publication-meta">
+                            <span class="publication-type">Research Report</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="pdfs/Nairobi-Youth-Resource-Centers-Survey-Report-Official.pdf" target="_blank" class="btn btn-read">
+                                Read more <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 5. Training Guide - LUNT -->
+                <div class="publication-item">
+                    <div class="publication-img">
+                        <img src="images/trainingguide.jpeg" alt="LUNT Training Guide">
+                    </div>
+                    <div class="publication-info">
+                        <h3>Training Guide: Lenga Ugaidi Na Talanta (LUNT)</h3>
+                        <p>Comprehensive training manual for building awareness and resilience against violent extremism in the Horn of Africa, focusing on community involvement and youth engagement.</p>
+                        <div class="publication-meta">
+                            <span class="publication-type">Training Guide</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="pdfs/Training-guide-LUNT.pdf" target="_blank" class="btn btn-read">
+                                Read more <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 6. UNICEF Cameroon Webinar Report -->
+                <div class="publication-item">
+                    <div class="publication-img">
+                        <img src="images/unicefcameroon.jpeg" alt="UNICEF Webinar Report">
+                    </div>
+                    <div class="publication-info">
+                        <h3>UNICEF Cameroon Activity Report: FGM Zero Tolerance Webinar</h3>
+                        <p>Report from the International Day of Zero Tolerance for Female Genital Mutilation webinar, featuring discussions with experts, activists, and policymakers from across Africa.</p>
+                        <div class="publication-meta">
+                            <span class="publication-type">Workshop Report</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="pdfs/UNICEF-Cameroon-Activity-Report-for-Webinar.pdf" target="_blank" class="btn btn-read">
+                                Read more <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Back to Home Link -->
+            <div class="back-home">
+                <a href="index.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i> Back to Homepage
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo-container">
+                        <img src="images/Jarumi-Ventures-Logo.png" alt="Jarumi Ventures Africa" class="footer-logo">
+                        <div>
+                            <div class="footer-logo-text">Jarumi Ventures Africa</div>
+                            <p class="footer-tagline">Building You Up The Right Way</p>
+                        </div>
+                    </div>
+                    <p class="footer-tagline">
+                        Unlocking the potential of mission-driven organizations to build resilient, 
+                        revenue-generating, and impact-driven institutions across Africa.
+                    </p>
+                    <a href="https://www.whatsapp.com/channel/0029VbAlsIp6BIEj1lqL8B1N" target="_blank" class="whatsapp-footer-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Opportunities
+                    </a>
+                    <div class="social-links">
+                        <a href="https://twitter.com/JarumiAfrica" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/jarumi-ventures-africa" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#impact">Impact</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="get-started.html">Get Started</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>Nairobi, Kenya</div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                +254 70 776 7453<br>
+                                +254 720 575 051
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>hello@jarumi.co.ke</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jarumi Ventures Africa. All rights reserved.</p>
+                <p>Empowering purpose-driven organizations across Africa</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlay = document.getElementById('overlay');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        overlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Simple script to handle downloads
+        document.querySelectorAll('.btn-read').forEach(button => {
+            button.addEventListener('click', function(e) {
+                console.log('Opening PDF:', this.href);
+            });
+        });
+    </script>
+</body>
+</html>
