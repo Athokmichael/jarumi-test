@@ -74,45 +74,33 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
 
         .logo {
-            height: 50px;
+            height: 60px;
             width: auto;
         }
 
-        .logo-text {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 1.4rem;
-            color: var(--maroon);
-            line-height: 1;
-        }
-
-        .logo-tagline {
-            font-size: 0.8rem;
-            color: var(--gray);
-            margin-top: 3px;
-        }
-
+        /* Menu Button like Reshift Africa */
         .menu-button {
-            background: none;
-            border: none;
-            color: var(--maroon);
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 10px 20px;
-            border-radius: 50px;
             display: flex;
             align-items: center;
             gap: 8px;
+            background: var(--maroon);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
             transition: var(--transition);
         }
 
         .menu-button:hover {
-            background: rgba(128, 0, 32, 0.1);
+            background: var(--maroon-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(128, 0, 32, 0.2);
         }
 
         /* Mobile Menu */
@@ -125,7 +113,7 @@
             background: var(--white);
             box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
             z-index: 1002;
-            padding: 100px 40px;
+            padding: 80px 30px;
             transition: var(--transition);
             overflow-y: auto;
         }
@@ -134,49 +122,36 @@
             right: 0;
         }
 
-        .mobile-menu-links {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .mobile-menu-link {
-            color: var(--dark);
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 500;
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .mobile-menu-link:hover {
-            color: var(--maroon);
-            padding-left: 15px;
-        }
-
-        .mobile-menu-link:hover::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-        }
-
         .close-menu {
             position: absolute;
-            top: 30px;
-            right: 30px;
+            top: 25px;
+            right: 25px;
             background: none;
             border: none;
             font-size: 1.5rem;
             color: var(--dark);
             cursor: pointer;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-menu-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
             transition: var(--transition);
         }
 
-        .close-menu:hover {
+        .mobile-menu-link:hover {
             color: var(--maroon);
-            transform: rotate(90deg);
+            padding-left: 10px;
         }
 
         .overlay {
@@ -556,20 +531,16 @@
     </style>
 </head>
 <body>
-    <!-- Header with Menu -->
+    <!-- Header with Logo & Menu Button -->
     <header class="main-header">
         <div class="container header-container">
             <div class="logo-container">
                 <a href="index.html">
                     <img src="images/Jarumi-Ventures-Logo.png" alt="Jarumi Ventures Africa" class="logo">
                 </a>
-                <div>
-                    <div class="logo-text">Jarumi Ventures Africa</div>
-                    
-                </div>
             </div>
 
-            <!-- Menu Button -->
+            <!-- Menu Button like Reshift Africa -->
             <button class="menu-button" id="menuButton">
                 <i class="fas fa-bars"></i> Menu
             </button>
@@ -587,11 +558,11 @@
             <a href="services.html" class="mobile-menu-link">Services</a>
             <a href="impact.html" class="mobile-menu-link">Impact</a>
             <a href="publications.html" class="mobile-menu-link">Publications</a>
-            <a href="get started.html" class="mobile-menu-link">Get Started</a>
+            <a href="getstarted.html" class="mobile-menu-link">Get Started</a>
         </div>
     </div>
 
-    <!-- Overlay -->
+    <!-- Overlay for mobile menu -->
     <div class="overlay" id="overlay"></div>
 
     <!-- Publications Hero -->
@@ -848,5 +819,4 @@
         });
     </script>
 </body>
-
 </html>
