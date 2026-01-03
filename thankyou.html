@@ -13,6 +13,15 @@
             --white: #ffffff;
             --dark: #1a1a1a;
             --gray: #666;
+            
+            /* Font size variables */
+            --font-size-h1: 3rem;                   /* 48px */
+            --font-size-h2: 2.5rem;                 /* 40px */
+            --font-size-h3: 2rem;                   /* 32px */
+            --font-size-paragraph: 1rem;            /* 16px */
+            --font-size-paragraph-large: 1.125rem;  /* 18px */
+            --font-size-small: 0.9375rem;           /* 15px */
+            --font-size-quote: 1.6rem;              /* 26px */
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,6 +34,7 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
         
         .confirmation-container {
@@ -53,14 +63,14 @@
         h1 {
             color: var(--maroon);
             margin-bottom: 20px;
-            font-size: 2.5rem;
+            font-size: var(--font-size-h1); /* 48px */
         }
         
         p {
             color: var(--dark);
             line-height: 1.6;
             margin-bottom: 15px;
-            font-size: 1.1rem;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
         
         .highlight {
@@ -74,6 +84,7 @@
         .highlight p {
             color: var(--dark);
             margin-bottom: 10px;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
         
         .highlight p:last-child {
@@ -88,7 +99,7 @@
         .next-steps h3 {
             color: var(--maroon);
             margin-bottom: 15px;
-            font-size: 1.3rem;
+            font-size: var(--font-size-h3); /* 32px */
         }
         
         .next-steps ul {
@@ -100,6 +111,7 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
         
         .next-steps i {
@@ -124,7 +136,7 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
         
         .btn-primary {
@@ -161,6 +173,7 @@
         .contact-info p {
             margin: 10px 0;
             color: var(--gray);
+            font-size: var(--font-size-paragraph); /* 16px */
         }
         
         @media (max-width: 600px) {
@@ -169,7 +182,11 @@
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem; /* 40px - smaller on mobile */
+            }
+            
+            .next-steps h3 {
+                font-size: 1.8rem; /* 28px - smaller on mobile */
             }
             
             .actions {
@@ -179,6 +196,29 @@
             .btn {
                 width: 100%;
                 justify-content: center;
+            }
+            
+            p {
+                font-size: var(--font-size-paragraph); /* 16px */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem; /* 32px - smaller on very small screens */
+            }
+            
+            .next-steps h3 {
+                font-size: 1.5rem; /* 24px - smaller on very small screens */
+            }
+            
+            p {
+                font-size: var(--font-size-paragraph); /* 16px */
+            }
+            
+            .btn {
+                font-size: var(--font-size-paragraph); /* 16px */
+                padding: 14px 30px;
             }
         }
     </style>
