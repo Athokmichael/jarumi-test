@@ -7,7 +7,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* CSS Variables for standardized font sizes */
         :root {
+            /* Base font size - 1rem = 16px */
+            --base-font-size: 1rem;
+            
+            /* Heading sizes */
+            --font-size-h1: 3rem;                   /* 48px */
+            --font-size-h2: 2.5rem;                 /* 40px */
+            --font-size-h3: 2rem;                   /* 32px */
+            --font-size-section-title: 2.75rem;     /* 44px */
+            --font-size-hero-title: 3.5rem;         /* 56px */
+            
+            /* Body text sizes */
+            --font-size-paragraph: 1rem;            /* 16px */
+            --font-size-paragraph-large: 1.125rem;  /* 18px */
+            --font-size-small: 0.9375rem;           /* 15px */
+            --font-size-quote: 1.6rem;              /* 26px */
+            
+            /* Color variables */
             --maroon: #800020;
             --maroon-light: #a53860;
             --gold: #d4af37;
@@ -34,6 +52,7 @@
             color: var(--dark);
             background: var(--white);
             overflow-x: hidden;
+            font-size: var(--base-font-size); /* 16px */
         }
 
         h1, h2, h3, h4, h5 {
@@ -63,6 +82,7 @@
             font-weight: 600;
             transition: var(--transition);
             border: 2px solid var(--maroon);
+            font-size: var(--base-font-size);
         }
 
         .btn:hover {
@@ -110,7 +130,7 @@
             padding: 10px 20px;
             border-radius: 4px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: var(--font-size-small); /* 15px */
             cursor: pointer;
             transition: var(--transition);
         }
@@ -195,13 +215,13 @@
         }
 
         .impact-hero h1 {
-            font-size: 3rem;
+            font-size: var(--font-size-hero-title); /* 56px */
             color: var(--dark);
             margin-bottom: 20px;
         }
 
         .impact-hero p {
-            font-size: 1.2rem;
+            font-size: var(--font-size-quote); /* 26px */
             color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
@@ -215,7 +235,7 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: var(--font-size-section-title); /* 44px */
             color: var(--dark);
             margin-bottom: 15px;
             position: relative;
@@ -234,7 +254,7 @@
         }
 
         .section-title p {
-            font-size: 1.1rem;
+            font-size: var(--font-size-paragraph); /* 16px */
             color: var(--gray);
             max-width: 700px;
             margin: 20px auto 0;
@@ -248,6 +268,7 @@
             font-weight: 600;
             margin-top: 20px;
             transition: var(--transition);
+            font-size: var(--base-font-size);
         }
 
         .section-link i {
@@ -306,7 +327,7 @@
 
         .metric-description {
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: var(--font-size-paragraph); /* 16px */
             margin-top: 15px;
             line-height: 1.6;
         }
@@ -366,12 +387,14 @@
             font-weight: 500;
             margin-bottom: 15px;
             display: block;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
 
         .case-study-description {
             color: var(--gray);
             margin-bottom: 20px;
             line-height: 1.7;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
 
         .case-study-results {
@@ -398,6 +421,7 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
 
         .case-study-results li i {
@@ -449,7 +473,7 @@
 
         .certificate-description {
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: var(--font-size-paragraph); /* 16px */
             line-height: 1.6;
         }
 
@@ -491,7 +515,7 @@
         }
 
         .partner-name {
-            font-size: 1rem;
+            font-size: var(--font-size-paragraph); /* 16px */
             color: var(--dark);
             text-align: center;
             font-weight: 500;
@@ -526,12 +550,13 @@
             color: var(--gray);
             margin-bottom: 15px;
             line-height: 1.8;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
 
         .magazine-quote {
             font-style: italic;
             color: var(--maroon);
-            font-size: 1.2rem;
+            font-size: var(--font-size-quote); /* 26px */
             margin: 25px 0;
             padding-left: 20px;
             border-left: 3px solid var(--maroon);
@@ -579,7 +604,7 @@
         }
 
         .testimonial-text {
-            font-size: 1.2rem;
+            font-size: var(--font-size-quote); /* 26px */
             font-style: italic;
             color: var(--gray);
             line-height: 1.7;
@@ -590,11 +615,12 @@
             font-weight: 600;
             color: var(--dark);
             margin-bottom: 5px;
+            font-size: var(--font-size-paragraph-large); /* 18px */
         }
 
         .testimonial-org {
             color: var(--maroon);
-            font-size: 0.95rem;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
 
         /* ================= CTA SECTION ================= */
@@ -606,12 +632,12 @@
         }
 
         .impact-cta h2 {
-            font-size: 2.5rem;
+            font-size: var(--font-size-section-title); /* 44px */
             margin-bottom: 20px;
         }
 
         .impact-cta p {
-            font-size: 1.2rem;
+            font-size: var(--font-size-quote); /* 26px */
             margin-bottom: 40px;
             opacity: 0.9;
             max-width: 700px;
@@ -671,7 +697,7 @@
 
         .footer-tagline {
             color: #aaa;
-            font-size: 0.95rem;
+            font-size: var(--font-size-paragraph); /* 16px */
             margin-bottom: 25px;
             line-height: 1.6;
         }
@@ -686,7 +712,7 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: var(--font-size-small); /* 15px */
             margin-bottom: 20px;
             transition: var(--transition);
         }
@@ -740,6 +766,7 @@
             text-decoration: none;
             transition: var(--transition);
             display: inline-block;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
 
         .footer-links a:hover {
@@ -768,7 +795,7 @@
             padding-top: 30px;
             border-top: 1px solid #333;
             color: #777;
-            font-size: 0.9rem;
+            font-size: var(--font-size-small); /* 15px */
         }
 
         .footer-bottom p:last-child {
@@ -778,19 +805,31 @@
         /* ================= RESPONSIVE DESIGN ================= */
         @media (max-width: 992px) {
             .impact-hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.5rem; /* Smaller on tablet */
             }
             
             .section-title h2 {
-                font-size: 2.2rem;
+                font-size: 2.2rem; /* Smaller on tablet */
             }
             
             .impact-cta h2 {
-                font-size: 2.2rem;
+                font-size: 2.2rem; /* Smaller on tablet */
+            }
+            
+            .impact-cta p {
+                font-size: 1.3rem; /* Smaller on tablet */
+            }
+            
+            .testimonial-text {
+                font-size: 1.4rem; /* Smaller on tablet */
             }
             
             .magazine-content {
                 gap: 40px;
+            }
+            
+            .magazine-quote {
+                font-size: 1.4rem; /* Smaller on tablet */
             }
         }
 
@@ -804,15 +843,19 @@
             }
             
             .impact-hero h1 {
-                font-size: 2rem;
+                font-size: 2rem; /* Smaller on mobile */
             }
             
             .impact-hero p {
-                font-size: 1.1rem;
+                font-size: 1.2rem; /* Smaller on mobile */
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 2rem; /* Smaller on mobile */
+            }
+            
+            .section-title p {
+                font-size: var(--font-size-paragraph); /* 16px */
             }
             
             .case-studies-grid {
@@ -837,15 +880,19 @@
             }
             
             .testimonial-text {
-                font-size: 1.1rem;
+                font-size: 1.2rem; /* Smaller on mobile */
             }
             
             .impact-cta h2 {
-                font-size: 2rem;
+                font-size: 2rem; /* Smaller on mobile */
             }
             
             .impact-cta p {
-                font-size: 1.1rem;
+                font-size: 1.2rem; /* Smaller on mobile */
+            }
+            
+            .magazine-quote {
+                font-size: 1.2rem; /* Smaller on mobile */
             }
             
             section {
@@ -859,11 +906,11 @@
             }
             
             .impact-hero h1 {
-                font-size: 1.8rem;
+                font-size: 1.8rem; /* Smaller on very small screens */
             }
             
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 1.8rem; /* Smaller on very small screens */
             }
             
             .metrics-grid,
@@ -880,6 +927,10 @@
                 font-size: 2.5rem;
             }
             
+            .metric-description {
+                font-size: var(--font-size-paragraph); /* 16px */
+            }
+            
             .case-study-content {
                 padding: 20px;
             }
@@ -889,16 +940,24 @@
             }
             
             .testimonial-text {
-                font-size: 1rem;
+                font-size: 1rem; /* Smaller on very small screens */
             }
             
             .impact-cta h2 {
-                font-size: 1.8rem;
+                font-size: 1.8rem; /* Smaller on very small screens */
+            }
+            
+            .impact-cta p {
+                font-size: 1rem; /* Smaller on very small screens */
             }
             
             .cta-button {
                 padding: 14px 30px;
                 font-size: 1rem;
+            }
+            
+            .magazine-quote {
+                font-size: 1rem; /* Smaller on very small screens */
             }
             
             .footer-content {
@@ -1360,10 +1419,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
