@@ -7,7 +7,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* CSS Variables for standardized font sizes */
         :root {
+            /* Base font size - 1rem = 16px */
+            --base-font-size: 1rem;
+            
+            /* Heading sizes */
+            --font-size-h1: 3rem;                   /* 48px */
+            --font-size-h2: 2.5rem;                 /* 40px */
+            --font-size-h3: 2rem;                   /* 32px */
+            --font-size-section-title: 2.75rem;     /* 44px */
+            --font-size-hero-title: 3.5rem;         /* 56px */
+            
+            /* Body text sizes */
+            --font-size-paragraph: 1rem;            /* 16px */
+            --font-size-paragraph-large: 1.125rem;  /* 18px */
+            --font-size-small: 0.9375rem;           /* 15px */
+            --font-size-quote: 1.6rem;              /* 26px */
+            
+            /* Color variables */
             --maroon: #800020;
             --maroon-light: #a53860;
             --gold: #d4af37;
@@ -34,6 +52,7 @@
             color: var(--dark);
             background: var(--white);
             overflow-x: hidden;
+            font-size: var(--base-font-size); /* 16px */
         }
 
         h1, h2, h3, h4, h5 {
@@ -63,6 +82,7 @@
             font-weight: 600;
             transition: var(--transition);
             box-shadow: 0 5px 15px rgba(128, 0, 32, 0.2);
+            font-size: var(--base-font-size);
         }
 
         .btn:hover {
@@ -244,14 +264,14 @@
         }
 
         .getstarted-hero h1 {
-            font-size: 3.5rem;
+            font-size: var(--font-size-hero-title); /* 56px */
             margin-bottom: 20px;
             line-height: 1.2;
             animation: fadeInUp 1s ease;
         }
 
         .getstarted-hero p {
-            font-size: 1.4rem;
+            font-size: var(--font-size-quote); /* 26px */
             margin-bottom: 30px;
             line-height: 1.6;
             opacity: 0.9;
@@ -281,7 +301,7 @@
         }
 
         .section-header h2 {
-            font-size: 2.8rem;
+            font-size: var(--font-size-section-title); /* 44px */
             color: var(--dark);
             margin-bottom: 15px;
             position: relative;
@@ -300,7 +320,7 @@
         }
 
         .section-header p {
-            font-size: 1.2rem;
+            font-size: var(--font-size-paragraph); /* 16px */
             color: var(--gray);
             max-width: 700px;
             margin: 25px auto 0;
@@ -353,7 +373,7 @@
             font-weight: 600;
             margin-bottom: 10px;
             color: var(--dark);
-            font-size: 0.95rem;
+            font-size: var(--font-size-small); /* 15px */
         }
 
         .form-group input,
@@ -363,7 +383,7 @@
             padding: 15px 20px;
             border-radius: 10px;
             border: 2px solid #e0e0e0;
-            font-size: 1rem;
+            font-size: var(--base-font-size); /* 16px */
             font-family: 'Inter', sans-serif;
             transition: var(--transition);
             background: #fafafa;
@@ -472,6 +492,7 @@
         .benefit-card p {
             color: var(--gray);
             line-height: 1.6;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
 
         /* ================= FOOTER ================= */
@@ -509,7 +530,7 @@
 
         .footer-tagline {
             color: #aaa;
-            font-size: 0.95rem;
+            font-size: var(--font-size-paragraph); /* 16px */
             margin-bottom: 25px;
             line-height: 1.6;
         }
@@ -524,7 +545,7 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: var(--font-size-small); /* 15px */
             transition: var(--transition);
         }
 
@@ -589,6 +610,7 @@
             text-decoration: none;
             transition: var(--transition);
             display: inline-block;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
 
         .footer-links a:hover {
@@ -617,7 +639,7 @@
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #777;
-            font-size: 0.9rem;
+            font-size: var(--font-size-small); /* 15px */
         }
 
         .footer-bottom p:first-child {
@@ -663,11 +685,15 @@
             }
             
             .getstarted-hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.5rem; /* Smaller on mobile */
+            }
+            
+            .getstarted-hero p {
+                font-size: 1.3rem; /* Smaller on mobile */
             }
             
             .section-header h2 {
-                font-size: 2.2rem;
+                font-size: 2.2rem; /* Smaller on mobile */
             }
             
             .booking-form {
@@ -681,15 +707,28 @@
             section {
                 padding: 80px 0;
             }
+            
+            /* Adjust heading sizes for mobile */
+            .getstarted-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
         }
 
         @media (max-width: 480px) {
             .getstarted-hero h1 {
-                font-size: 2rem;
+                font-size: 2rem; /* Smaller on very small screens */
+            }
+            
+            .getstarted-hero p {
+                font-size: 1.2rem; /* Smaller on very small screens */
             }
             
             .section-header h2 {
-                font-size: 1.8rem;
+                font-size: 1.8rem; /* Smaller on very small screens */
             }
             
             .booking-form {
@@ -710,6 +749,15 @@
                 justify-content: center;
                 flex-direction: column;
                 text-align: center;
+            }
+            
+            /* Adjust heading sizes for very small screens */
+            .getstarted-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
