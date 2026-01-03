@@ -7,7 +7,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* CSS Variables for standardized font sizes */
         :root {
+            /* Base font size - 1rem = 16px */
+            --base-font-size: 1rem;
+            
+            /* Heading sizes */
+            --font-size-h1: 3rem;                   /* 48px */
+            --font-size-h2: 2.5rem;                 /* 40px */
+            --font-size-h3: 2rem;                   /* 32px */
+            --font-size-section-title: 2.75rem;     /* 44px */
+            --font-size-hero-title: 3.5rem;         /* 56px */
+            
+            /* Body text sizes */
+            --font-size-paragraph: 1rem;            /* 16px */
+            --font-size-paragraph-large: 1.125rem;  /* 18px */
+            --font-size-small: 0.9375rem;           /* 15px */
+            --font-size-quote: 1.6rem;              /* 26px */
+            
+            /* Color variables */
             --maroon: #800020;
             --maroon-light: #a53860;
             --gold: #d4af37;
@@ -33,6 +51,7 @@
             line-height: 1.6;
             color: var(--dark);
             background: var(--white);
+            font-size: var(--base-font-size); /* 16px */
         }
 
         h1, h2, h3, h4, h5 {
@@ -92,7 +111,7 @@
             padding: 10px 20px;
             border-radius: 4px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: var(--font-size-small); /* 15px */
             cursor: pointer;
             transition: var(--transition);
         }
@@ -178,13 +197,13 @@
         }
 
         .publications-hero h1 {
-            font-size: 3.2rem;
+            font-size: var(--font-size-hero-title); /* 56px */
             color: var(--dark);
             margin-bottom: 20px;
         }
 
         .publications-hero p {
-            font-size: 1.3rem;
+            font-size: var(--font-size-quote); /* 26px */
             color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
@@ -203,7 +222,7 @@
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: var(--font-size-section-title); /* 44px */
             color: var(--dark);
             margin-bottom: 15px;
             position: relative;
@@ -222,7 +241,7 @@
         }
 
         .section-header p {
-            font-size: 1.1rem;
+            font-size: var(--font-size-paragraph); /* 16px */
             color: var(--gray);
             max-width: 700px;
             margin: 25px auto 0;
@@ -275,7 +294,7 @@
 
         .publication-info p {
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: var(--font-size-paragraph); /* 16px */
             margin-bottom: 20px;
             line-height: 1.6;
         }
@@ -294,13 +313,13 @@
             color: var(--maroon);
             padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: var(--font-size-small); /* 15px */
             font-weight: 500;
         }
 
         .publication-date {
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: var(--font-size-small); /* 15px */
         }
 
         .publication-actions {
@@ -315,7 +334,7 @@
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: var(--base-font-size); /* 16px */
             transition: var(--transition);
             text-align: center;
             flex: 1;
@@ -352,6 +371,7 @@
             font-weight: 600;
             transition: var(--transition);
             border: 2px solid var(--maroon);
+            font-size: var(--base-font-size); /* 16px */
         }
 
         .btn-back:hover {
@@ -389,13 +409,13 @@
         .footer-logo-text {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--white);
         }
 
         .footer-tagline {
             color: #aaa;
-            font-size: 0.9rem;
+            font-size: var(--font-size-paragraph); /* 16px */
             margin-bottom: 25px;
             line-height: 1.6;
         }
@@ -410,7 +430,7 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: var(--font-size-small); /* 15px */
             transition: var(--transition);
             margin-bottom: 20px;
         }
@@ -475,6 +495,7 @@
             text-decoration: none;
             transition: var(--transition);
             display: inline-block;
+            font-size: var(--font-size-paragraph); /* 16px */
         }
 
         .footer-links a:hover {
@@ -503,7 +524,7 @@
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #777;
-            font-size: 0.9rem;
+            font-size: var(--font-size-small); /* 15px */
         }
 
         /* ================= RESPONSIVE ================= */
@@ -513,11 +534,15 @@
             }
             
             .publications-hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.5rem; /* Smaller on mobile */
+            }
+            
+            .publications-hero p {
+                font-size: 1.3rem; /* Smaller on mobile */
             }
             
             .section-header h2 {
-                font-size: 2rem;
+                font-size: 2rem; /* Smaller on mobile */
             }
             
             .publications-grid {
@@ -526,6 +551,46 @@
             
             .publication-actions {
                 flex-direction: column;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            /* Adjust heading sizes for mobile */
+            .publications-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .publications-hero h1 {
+                font-size: 2rem; /* Smaller on very small screens */
+            }
+            
+            .publications-hero p {
+                font-size: 1.2rem; /* Smaller on very small screens */
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem; /* Smaller on very small screens */
+            }
+            
+            .publication-info {
+                padding: 20px;
+            }
+            
+            /* Adjust heading sizes for very small screens */
+            .publications-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -820,4 +885,3 @@
     </script>
 </body>
 </html>
-
